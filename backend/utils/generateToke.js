@@ -6,11 +6,11 @@ const generateTokenAndSetCookie = (userId, res) => {
 	});
 
 	res.cookie("token", token, {
-		maxAge: 15 * 24 * 60 * 60 * 1000, 
-		httpOnly: true,
-		sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", 
-		secure: process.env.NODE_ENV === "production", 
-	});
+        maxAge: 15 * 24 * 60 * 60 * 1000, 
+        httpOnly: true,
+        sameSite: 'none',
+        secure: true,
+    });
 };
 
 export default generateTokenAndSetCookie;
